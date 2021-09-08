@@ -1,0 +1,7 @@
+.style {
+/* По вертикали | По горизонтали */
+padding: 5% 30%;
+}
+.current {
+    border-bottom: 4px solid #29b6f6;
+}

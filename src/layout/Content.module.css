@@ -1,0 +1,7 @@
+
+.style{
+       display: grid;
+       grid-template-columns: 1fr 20fr;
+       padding: 10px;
+   }
+   

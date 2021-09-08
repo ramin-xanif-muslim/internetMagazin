@@ -1,0 +1,11 @@
+.style{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    padding: 10px;
+}
+
+.img {
+    width: 400px;
+    height: 300px;
+}

@@ -1,0 +1,12 @@
+
+/* .style {
+    По вертикали | По горизонтали
+    padding: 5% 30%;
+    } */
+
+    .style{
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 5fr 5fr;
+        padding: 0px;
+    }        
