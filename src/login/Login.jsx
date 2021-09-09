@@ -1,5 +1,6 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import s from './Login.module.css'
+import { Redirect } from 'react-router';
 
 const Login = (props) => {
   
@@ -11,8 +12,10 @@ const Login = (props) => {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
-
-  return (<div className={s.style}>
+  
+  return (<div>
+    {props.Token ? <Redirect to="products" /> :
+    <div className={s.style}>
     <Form
       name="basic"
       labelCol={{
@@ -70,12 +73,16 @@ const Login = (props) => {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
+        <div >
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </div>
+        
       </Form.Item>
     </Form></div>
-  );
+  }
+  </div>)
 };
 
 export default Login;

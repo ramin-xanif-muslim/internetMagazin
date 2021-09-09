@@ -14,7 +14,13 @@ export default function Header(props) {
                         {props.state.products.Type === "store" && <li><NavLink to="/product_yarad" activeClassName={s.current} >Mehsul yarad</NavLink></li>}
                         <li><NavLink to="/costomersingup" activeClassName={s.current} >Costomer sing up</NavLink></li>
                         <li><NavLink to="/storesingup" activeClassName={s.current}>Store sing up</NavLink></li>
-                        <li><NavLink to="/login" activeClassName={s.current}>Login</NavLink></li>
+                        {/* <li><NavLink to="/login" activeClassName={s.current}>Login</NavLink></li> */}
+                        {!props.state.products.Token ? 
+                        <li><NavLink to="/login" activeClassName={s.current}>Login</NavLink></li> :
+                        <div>
+                            <button onClick={()=>localStorage.removeItem("Token")}>Logout</button>
+                        </div>
+                        }
                     </ul>
                 </div>
             </nav>

@@ -21,12 +21,16 @@ import './App.css';
 class App extends React.Component {
 
        componentDidMount() {
+              this.props.getToken()
        }
 
        render() {
               return (
                      <React.Fragment>
-                            <Header state={this.props.state} />
+                            <Header 
+                            getToken={this.props.getToken}
+                            state={this.props.state} 
+                            />
                             <Content 
                                state={this.props.state}
                                getProduct={this.props.getProduct}

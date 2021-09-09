@@ -1,5 +1,6 @@
 import * as axios from "axios";
 import { API_BASE } from '../config/env';
+import { getToken } from "./product";
 
 const LOGIN = 'LOGIN'
 

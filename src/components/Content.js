@@ -49,7 +49,9 @@ export default function Content(props) {
 
     return ( 
         <div>
-            <main className="container">
+            {!props.state.products.Token ? <Redirect to='login'/> : 
+            <div>
+                <main className="container">
             {props.state.products.Type === "customer" && <CartIcon length={cartItems.length} Token={Token} getCart={props.getCart}
              toggleShow={toggleShow} closeModal={props.closeModal} />}
             {props.state.cart.showAlert && <ShowAlert text={props.state.cart.showAlert}
@@ -65,8 +67,9 @@ export default function Content(props) {
                 null
             )}
            </main>
+            </div>
+            }
+            
         </div>
-        
-        
     );
 }

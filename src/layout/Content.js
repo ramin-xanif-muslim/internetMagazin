@@ -11,11 +11,8 @@ import CreateProductPage from '../components/CreateProductPage';
 import s from './Content.module.css';
 import 'antd/dist/antd.css';
 import Images from '../components/Images';
-import SearchInput from '../components/SearchInput';
 import { Input, Space } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import { API_BASE } from '../config/env';
-import * as axios from "axios";
 
 const { Search } = Input;
 
@@ -27,31 +24,22 @@ const suffix = (
     }}
   />
 );
-//  { 
-//        let Token = localStorage.getItem("Token")
-//        const instance = axios.create({ headers:     { "Token": `${Token}`}});
-//        let body = {Searcth: value}
-//                    instance.post(`${API_BASE}/product/read.php`, body)
-//                    .then(result => result.data)
-//                    .then(data => console.log(body))
-// }
-
 
 const Contents = (props) => {
        const onSearch = value => props.searchProduct({Search: value})
     return(
         <div className={s.style}>
         <div>
-          <MenuDD />
-        </div>
-        <div>
               <Space direction="vertical">
                      <Search placeholder="input search text" onSearch={onSearch} style={{ width: 200 }} />
               </Space>
+          <MenuDD />
+        </div>
+        <div>
                <Route path='/images gallery'
                       render={() => <Images />} />
                <Route path='/login'
-                      render={() => <Login />} />
+                      render={() => <Login Token={props.state.login.Token}/>} />
                <Route path='/costomersingup'
                       render={() => <CostomerSingUn />} />
                <Route path='/storesingup'
